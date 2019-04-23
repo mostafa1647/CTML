@@ -8,11 +8,10 @@ using namespace std;
 
 class CTML
 {
-	fstream fp;
+	ofstream out;
 	string text;
 public:
 	CTML();
-	CTML(string _text);
 	void set_head();
 	void set_body();
 	void p();
@@ -25,7 +24,7 @@ public:
 	//void title();
 	void hr();
 	void br();
-
+	void finish();
 
 	~CTML();
 };

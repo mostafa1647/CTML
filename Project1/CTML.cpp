@@ -4,12 +4,8 @@
 
 CTML::CTML()
 {
-
-}
-
-CTML::CTML(string _text)
-{
-
+	out.open("CTML.html", ios::out);
+	text = "<!DOCTYPE html><html>";
 }
 
 
@@ -30,11 +26,25 @@ void CTML::set_head()
 
 void CTML::set_body()
 {
-	string temp, temp2;
-	temp = "<body>";
-	text = text + temp;
+	string temp;
+	char a;
+	cout << "Do you want to add background color?(Y/N)\n";
+	cin >> a;
+	if (a == 'Y')
+	{
+		string color;
+		cout << "Enter color\n";
+		cin >> color;
+		temp = "<body style=\"background-color:" + color + ";\">";
+		text = text + temp;
+	}
+	else if (a == 'N')
+	{
+		temp = "<body>";
+		text = text + temp;
+	}
 	int menu;
-	cout << "if you want to add <hr> or <br> elements inside of other elements please enter this tag in the value of the tag\n";
+	cout << "Note: if you want to add <hr> or <br> elements inside of other elements please enter this tag in the value of the tag\n";
 	while (true)
 	{
 		cout << "Enter the number of tag you want to add\n";
@@ -80,7 +90,7 @@ void CTML::set_body()
 		}
 		else if (menu == 8)
 		{
-			this->title();
+			//this->title();
 		}
 		else if (menu == 9)
 		{
@@ -95,6 +105,8 @@ void CTML::set_body()
 			break;
 		}
 	}
+	temp = "</body>";
+	text = text + temp;
 }
 
 void CTML::p()
@@ -193,7 +205,13 @@ void CTML::br()
 	text = text + temp;
 }
 
+void CTML::finish()
+{
+	text = text + "</html>";
+	out << text;
+}
+
 CTML::~CTML()
 {
-
+	out.close();
 }
