@@ -21,7 +21,6 @@ public:
 	void h4();
 	void h5();
 	void h6();
-	//void title();
 	void hr();
 	void br();
 	void finish();

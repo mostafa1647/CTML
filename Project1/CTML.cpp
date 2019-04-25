@@ -55,9 +55,8 @@ void CTML::set_body()
 		cout << "5. <h4>\n";
 		cout << "6. <h5>\n";
 		cout << "7. <h6>\n";
-		cout << "8. <title>\n";
-		cout << "9. <hr>\n";
-		cout << "10. <br>\n";
+		cout << "8. <hr>\n";
+		cout << "9. <br>\n";
 		cout << "0. finish\n";
 		cin >> menu;
 		if (menu == 1)
@@ -90,13 +89,9 @@ void CTML::set_body()
 		}
 		else if (menu == 8)
 		{
-			//this->title();
-		}
-		else if (menu == 9)
-		{
 			this->hr();
 		}
-		else if (menu == 10)
+		else if (menu == 9)
 		{
 			this->br();
 		}
@@ -186,12 +181,6 @@ void CTML::h6()
 	temp = "<h6 style=\"color:" + color + ";\">" + h6 + "</h1>";
 	text = text + temp;
 }
-//
-//void CTML::title()
-//{
-//	string title, temp;
-//
-//}
 
 void CTML::hr()
 {
